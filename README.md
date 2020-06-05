@@ -18,7 +18,7 @@ In this project, I created a Bookstore App using React and Redux for a fictional
 
 Live version of the project: [Live version](https://react-bookstore-ermin.herokuapp.com/)
 
-Project Link: [React-Calculator](https://github.com/ermin-cahtarevic/react-bookstore)
+Project Link: [React-Bookstore](https://github.com/ermin-cahtarevic/react-bookstore)
 
 
 ### Built With
