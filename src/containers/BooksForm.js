@@ -1,41 +1,64 @@
 import React from 'react';
 
-const BooksForm = () => {
-  const categories = [
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
+const categories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
+];
 
-  return (
-    <form>
-      <label htmlFor="title">
-        Title
-        <input type="text" id="title" />
-      </label>
-      <label htmlFor="category">
-        Choose a category:
-        <select id="category">
+class BooksForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      category: '',
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
+  
+  render() {
+    return (
+      <form>
+        <input 
+          type="text"
+          name="title"
+          value={this.state.title}
+          onChange={this.handleChange}
+        />
+        <select
+          name="category"
+          value={this.state.category}
+          onChange={this.handleChange}
+        >
           {
-            categories.map(category => (
+            categories.map(mappedCategory => (
               <option
-                value={category}
-                key={Math.round(Math.random() * 100)}
+                value={mappedCategory}
+                key={mappedCategory}
               >
-                {category}
+                {mappedCategory}
               </option>
             ))
           }
         </select>
-      </label>
-
-      <input type="submit" />
-    </form>
-  );
+  
+        <input type="submit" />
+      </form>
+    );
+  }
+  
 };
 
 export default BooksForm;
