@@ -1,4 +1,6 @@
 import React from 'react';
+import {createBook} from '../actions/index';
+import { connect } from 'react-redux';
 
 const categories = [
   'Action',
@@ -19,6 +21,7 @@ class BooksForm extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -27,10 +30,20 @@ class BooksForm extends React.Component {
       [name]: value,
     });
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { title, category } = this.state;
+    const id = Math.round(Math.random() * 100).toString();
+    const book = { title, category, id }
+    const { createBook } = this.props;
+    createBook(book);
+    this.setState({ title: '', category: '' });
+  }
   
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input 
           type="text"
           name="title"
@@ -61,4 +74,8 @@ class BooksForm extends React.Component {
   
 };
 
-export default BooksForm;
+const mapDispatchToProps = dispatch => ({
+  createBook: book => dispatch(createBook(book)),
+});
+
+export default connect(null, mapDispatchToProps)(BooksForm);
