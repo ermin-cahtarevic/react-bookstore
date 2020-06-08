@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Book = ({ book }) => (
+const Book = ({ book, removeBook }) => (
   <tr>
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td>{book.id}</td>
+    <td>
+      <button onClick={() => removeBook(book)}>Remove</button>
+    </td>
   </tr>
 );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {createBook} from '../actions/index';
+import { createBook } from '../actions/index';
 import { connect } from 'react-redux';
 
 const categories = [
@@ -34,7 +34,7 @@ class BooksForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { title, category } = this.state;
-    const id = Math.round(Math.random() * 100).toString();
+    const id = Math.round(Math.random() * 1000).toString();
     const book = { title, category, id }
     const { createBook } = this.props;
     createBook(book);
@@ -49,12 +49,15 @@ class BooksForm extends React.Component {
           name="title"
           value={this.state.title}
           onChange={this.handleChange}
+          required
         />
         <select
           name="category"
           value={this.state.category}
           onChange={this.handleChange}
+          required
         >
+          <option disabled value="">Category</option>
           {
             categories.map(mappedCategory => (
               <option
