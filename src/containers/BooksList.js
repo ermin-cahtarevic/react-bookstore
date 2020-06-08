@@ -5,7 +5,7 @@ import Book from '../components/Book';
 import { removeBook } from '../actions/index';
 
 const BooksList = ({ books, removeBook }) => {
-  const handleRemoveBook = (book) => {
+  const handleRemoveBook = book => {
     removeBook(book);
   };
 
@@ -26,7 +26,7 @@ const BooksList = ({ books, removeBook }) => {
       </tbody>
     </table>
   );
-}
+};
 
 const mapStateToProps = ({ booksReducer: { books } }) => ({
   books,
@@ -34,7 +34,7 @@ const mapStateToProps = ({ booksReducer: { books } }) => ({
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(removeBook(book)),
-})
+});
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
@@ -44,7 +44,7 @@ BooksList.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  removeBook: PropTypes.func,
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
