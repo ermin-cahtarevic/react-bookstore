@@ -2,6 +2,7 @@ import React from 'react';
 import { createBook } from '../actions/index';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import getId from '../helpers/getId';
 
 const categories = [
   'Action',
@@ -35,7 +36,7 @@ class BooksForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { title, category } = this.state;
-    const id = Math.round(Math.random() * 1000).toString();
+    const id = getId();
     const book = { title, category, id }
     const { createBook } = this.props;
     createBook(book);
