@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBook } from '../actions/index';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const categories = [
   'Action',
@@ -73,12 +74,15 @@ class BooksForm extends React.Component {
         <input type="submit" />
       </form>
     );
-  }
-  
+  }  
 };
 
 const mapDispatchToProps = dispatch => ({
   createBook: book => dispatch(createBook(book)),
 });
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+}
 
 export default connect(null, mapDispatchToProps)(BooksForm);

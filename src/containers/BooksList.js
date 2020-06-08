@@ -44,6 +44,7 @@ BooksList.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  removeBook: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
