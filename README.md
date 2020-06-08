@@ -34,6 +34,11 @@ Project Link: [React-Bookstore](https://github.com/ermin-cahtarevic/react-bookst
 ```
 git clone git@github.com:ermin-cahtarevic/react-bookstore.git
 ```
+### Install dependencies
+
+```
+npm install
+```
 
 ### Start Development Server
 
