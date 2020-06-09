@@ -55,3 +55,15 @@
   cursor: pointer;
   background-color: #005697;
 }
+
+@media only screen and (max-width: 768px) {
+  .book {
+    padding: 20px 0 0 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-remove {
+    border-left: none;
+  }
+}

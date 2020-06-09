@@ -59,3 +59,28 @@
   cursor: pointer;
   background-color: #005697;
 }
+
+@media only screen and (max-width: 1200px) {
+  .form-wrap {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .form-wrap form {
+    flex-direction: column;
+  }
+
+  .title-input {
+    width: initial;
+  }
+
+  .category-select {
+    height: 45px;
+    width: initial;
+    margin: 15px 0;
+  }
+
+  .add-book-btn {
+    height: 45px;
+  }
+}

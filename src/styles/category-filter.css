@@ -65,3 +65,31 @@
   align-items: center;
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 0 15px;
+    height: 150px;
+  }
+
+  .header-left {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .header-books,
+  .select {
+    margin-top: 30px;
+  }
+
+  .user-icon {
+    display: none;
+  }
+}

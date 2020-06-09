@@ -14,6 +14,10 @@
 
 ![screenshot](./public/bookstore.png)
 
+<p align="center">
+  <img src="./public/bookstore-mobile.png">
+</p>
+
 In this project, I created a Bookstore App using React and Redux for a fictional company named "Magic-books Inc"
 
 Live version of the project: [Live version](https://react-bookstore-ermin.herokuapp.com/)
