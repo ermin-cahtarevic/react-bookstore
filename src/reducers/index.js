@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import books from './books';
+import booksReducer from './books';
 import filterReducer from './filter';
 
 const reducer = initialState => {
-  const booksReducer = books(initialState);
+  const books = booksReducer(initialState);
   return combineReducers({
-    booksReducer,
-    filterReducer,
+    books,
+    filter: filterReducer,
   });
 };
 
