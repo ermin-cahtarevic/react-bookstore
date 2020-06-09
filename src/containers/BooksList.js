@@ -5,7 +5,7 @@ import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, removeBook }) => {
+const BooksList = ({ books, removeBook, changeFilter }) => {
   const handleRemoveBook = book => removeBook(book);
 
   const handleFilterChange = filter => changeFilter(filter);
@@ -32,12 +32,14 @@ const BooksList = ({ books, removeBook }) => {
   );
 };
 
-const mapStateToProps = ({ booksReducer: { books } }) => ({
+const mapStateToProps = ({ booksReducer: { books }, filter }) => ({
   books,
+  filter,
 });
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(removeBook(book)),
+  changeFilter: filter => dispatch(changeFilter(filter)),
 });
 
 BooksList.propTypes = {

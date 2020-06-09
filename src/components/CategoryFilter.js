@@ -6,7 +6,7 @@ const filters = ['All', ...categories()];
 const CategoryFilter = ({ changeFilter }) => {
   return (
     <div>
-      <select onChange={changeFilter}>
+      <select onChange={() => changeFilter()}>
         {
           filters.map(filter => (
             <option key={filter} value={filter}>{filter}</option>
