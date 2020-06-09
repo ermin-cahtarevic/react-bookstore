@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/App';
 import reducer from './reducers/index';
-
-const getId = () => Math.round(Math.random() * 100).toString();
+import getId from './helpers/getId';
 
 const initialState = {
   books: [

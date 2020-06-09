@@ -1,41 +1,90 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions/index';
+import getId from '../helpers/getId';
 
-const BooksForm = () => {
-  const categories = [
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
+const categories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
+];
 
-  return (
-    <form>
-      <label htmlFor="title">
-        Title
-        <input type="text" id="title" />
-      </label>
-      <label htmlFor="category">
-        Choose a category:
-        <select id="category">
+class BooksForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      category: 'Action',
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { title, category } = this.state;
+    const id = getId();
+    const book = { title, category, id };
+    const { createBook } = this.props;
+    createBook(book);
+    this.setState({ title: '', category: 'Action' });
+  }
+
+  render() {
+    const { title, category } = this.state;
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          value={title}
+          onChange={this.handleChange}
+          required
+        />
+        <select
+          name="category"
+          value={category}
+          onChange={this.handleChange}
+          required
+        >
+          <option disabled value="">Category</option>
           {
-            categories.map(category => (
+            categories.map(mappedCategory => (
               <option
-                value={category}
-                key={Math.round(Math.random() * 100)}
+                value={mappedCategory}
+                key={mappedCategory}
               >
-                {category}
+                {mappedCategory}
               </option>
             ))
           }
         </select>
-      </label>
 
-      <input type="submit" />
-    </form>
-  );
+        <input type="submit" />
+      </form>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  createBook: book => dispatch(createBook(book)),
+});
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
 };
 
-export default BooksForm;
+export default connect(null, mapDispatchToProps)(BooksForm);
