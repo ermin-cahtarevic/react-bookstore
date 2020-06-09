@@ -11,7 +11,7 @@ const BooksList = ({ books, filter, removeBook, changeFilter }) => {
   const handleFilterChange = filter => changeFilter(filter);
 
   const filtered = filter === 'All' ? books : books.filter(book => book.category === filter);
-  console.log(filter, filtered)
+
   return (
     <div>
       <CategoryFilter changeFilter={handleFilterChange} />
