@@ -5,7 +5,12 @@ import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, filter, removeBook, changeFilter }) => {
+const BooksList = ({
+  books,
+  filter,
+  removeBook,
+  changeFilter,
+}) => {
   const handleRemoveBook = book => removeBook(book);
 
   const handleFilterChange = filter => changeFilter(filter);
@@ -32,8 +37,7 @@ const BooksList = ({ books, filter, removeBook, changeFilter }) => {
                 key={book.id}
                 removeBook={handleRemoveBook}
               />
-              )
-            )
+            ))
           }
         </tbody>
       </table>
@@ -59,7 +63,9 @@ BooksList.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
