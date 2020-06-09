@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import categories from '../helpers/categories';
 import '../styles/category-filter.css';
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import categories from '../helpers/categories';
 
 const filters = ['All', ...categories()];
 
@@ -25,7 +25,7 @@ const CategoryFilter = ({ changeFilter }) => (
         <FontAwesomeIcon
           icon={faUser}
           style={{
-            color: "#0290ff"
+            color: '#0290ff',
           }}
         />
       </div>

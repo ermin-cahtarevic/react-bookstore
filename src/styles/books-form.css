@@ -14,7 +14,7 @@
   font-weight: 900;
   letter-spacing: -0.18px;
   text-transform: uppercase;
-  color: #888888;
+  color: #888;
   margin-bottom: 15px;
 }
 
@@ -22,15 +22,15 @@
   width: 600px;
   height: 45px;
   padding: 0 15px;
-  color: #888888;
+  color: #888;
   font-size: 16px;
   border: 1px solid #e8e8e8;
   border-radius: 5px;
 }
 
 ::placeholder {
-  color: #888888;
-  opacity: 1; 
+  color: #888;
+  opacity: 1;
 }
 
 .category-select {
@@ -39,7 +39,7 @@
   background-color: transparent;
   border-radius: 5px;
   padding: 0 15px;
-  color: #888888;
+  color: #888;
 }
 
 .category-select:focus {

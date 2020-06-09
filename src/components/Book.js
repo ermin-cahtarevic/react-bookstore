@@ -15,7 +15,7 @@ const Book = ({ book, removeBook }) => (
         type="button"
         onClick={() => removeBook(book)}
       >
-      Remove book
+        Remove book
       </button>
     </div>
   </div>
