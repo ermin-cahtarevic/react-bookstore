@@ -3,10 +3,10 @@ import categories from '../helpers/categories';
 
 const filters = ['All', ...categories()];
 
-const CategoryFilter = () => {
+const CategoryFilter = ({ changeFilter }) => {
   return (
     <div>
-      <select>
+      <select onChange={changeFilter}>
         {
           filters.map(filter => (
             <option key={filter} value={filter}>{filter}</option>
