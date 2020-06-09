@@ -10,7 +10,7 @@ const initialState = {
   books: [
     {
       title: 'First Book',
-      category: 'Documentary',
+      category: 'History',
       id: getId(),
     },
     {

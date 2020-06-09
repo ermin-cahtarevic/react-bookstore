@@ -3,16 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions/index';
 import getId from '../helpers/getId';
+import categories from '../helpers/categories';
 
-const categories = [
-  'Action',
-  'Biography',
-  'History',
-  'Horror',
-  'Kids',
-  'Learning',
-  'Sci-Fi',
-];
+const categoryList = categories();
 
 class BooksForm extends React.Component {
   constructor(props) {
@@ -62,7 +55,7 @@ class BooksForm extends React.Component {
         >
           <option disabled value="">Category</option>
           {
-            categories.map(mappedCategory => (
+            categoryList.map(mappedCategory => (
               <option
                 value={mappedCategory}
                 key={mappedCategory}
