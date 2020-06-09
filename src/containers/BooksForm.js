@@ -19,7 +19,7 @@ class BooksForm extends React.Component {
     super(props);
     this.state = {
       title: '',
-      category: '',
+      category: 'Action',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,7 +40,7 @@ class BooksForm extends React.Component {
     const book = { title, category, id };
     const { createBook } = this.props;
     createBook(book);
-    this.setState({ title: '', category: '' });
+    this.setState({ title: '', category: 'Action' });
   }
 
   render() {
