@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { createBook } from '../actions/index';
 import getId from '../helpers/getId';
 import categories from '../helpers/categories';
+import '../styles/books-form.css';
 
 const categoryList = categories();
 
@@ -39,35 +40,41 @@ class BooksForm extends React.Component {
   render() {
     const { title, category } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={this.handleChange}
-          required
-        />
-        <select
-          name="category"
-          value={category}
-          onChange={this.handleChange}
-          required
-        >
-          <option disabled value="">Category</option>
-          {
-            categoryList.map(mappedCategory => (
-              <option
-                value={mappedCategory}
-                key={mappedCategory}
-              >
-                {mappedCategory}
-              </option>
-            ))
-          }
-        </select>
+      <div className="form-wrap">
+        <h2 className="form-label">Add new book</h2>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            className="title-input"
+            type="text"
+            name="title"
+            placeholder="Book title"
+            value={title}
+            onChange={this.handleChange}
+            required
+          />
+          <select
+            className="category-select"
+            name="category"
+            value={category}
+            onChange={this.handleChange}
+            required
+          >
+            <option disabled value="">Category</option>
+            {
+              categoryList.map(mappedCategory => (
+                <option
+                  value={mappedCategory}
+                  key={mappedCategory}
+                >
+                  {mappedCategory}
+                </option>
+              ))
+            }
+          </select>
 
-        <input type="submit" />
-      </form>
+          <input className="add-book-btn" type="submit" value="Add Book" />
+        </form>
+      </div>
     );
   }
 }
