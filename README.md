@@ -12,7 +12,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- ![screenshot]() -->
+![screenshot](./public/bookstore.png)
 
 In this project, I created a Bookstore App using React and Redux for a fictional company named "Magic-books Inc"
 
