@@ -9,24 +9,26 @@ const filters = ['All', ...categories()];
 
 const CategoryFilter = ({ changeFilter }) => (
   <div className="header">
-    <div className="header-left">
-      <div className="logo">Bookstore CMS</div>
-      <div className="header-books">BOOKS</div>
-      <select className="select" onChange={e => changeFilter(e.target.value)}>
-        {
-          filters.map(filter => (
-            <option key={filter} value={filter}>{filter}</option>
-          ))
-        }
-      </select>
-    </div>
-    <div className="user-icon">
-      <FontAwesomeIcon
-        icon={faUser}
-        style={{
-          color: "#0290ff"
-        }}
-      />
+    <div className="navbar">
+      <div className="header-left">
+        <div className="logo">Bookstore CMS</div>
+        <div className="header-books">BOOKS</div>
+        <select className="select" onChange={e => changeFilter(e.target.value)}>
+          {
+            filters.map(filter => (
+              <option key={filter} value={filter}>{filter}</option>
+            ))
+          }
+        </select>
+      </div>
+      <div className="user-icon">
+        <FontAwesomeIcon
+          icon={faUser}
+          style={{
+            color: "#0290ff"
+          }}
+        />
+      </div>
     </div>
   </div>
 );

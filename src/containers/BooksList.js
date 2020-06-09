@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
+import '../styles/book-list.css';
 
 const BooksList = ({
   books,
@@ -20,27 +21,17 @@ const BooksList = ({
   return (
     <div>
       <CategoryFilter changeFilter={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>ID</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            filtered.map(book => (
-              <Book
-                book={book}
-                key={book.id}
-                removeBook={handleRemoveBook}
-              />
-            ))
-          }
-        </tbody>
-      </table>
+      <div className="book-list">
+        {
+          filtered.map(book => (
+            <Book
+              book={book}
+              key={book.id}
+              removeBook={handleRemoveBook}
+            />
+          ))
+        }
+      </div>
     </div>
   );
 };
