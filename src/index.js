@@ -9,23 +9,18 @@ import getId from './helpers/getId';
 const initialState = {
   books: [
     {
-      title: 'First Book',
-      category: 'History',
+      title: 'The Hunger Games',
+      category: 'Action',
       id: getId(),
     },
     {
-      title: 'Second Book',
-      category: 'Horror',
+      title: 'Dune',
+      category: 'Sci-Fi',
       id: getId(),
     },
     {
-      title: 'Third Book',
+      title: 'Capital in the Twenty-First Century',
       category: 'Learning',
-      id: getId(),
-    },
-    {
-      title: 'Fourth Book',
-      category: 'History',
       id: getId(),
     },
   ],

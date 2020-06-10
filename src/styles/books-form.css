@@ -1,0 +1,86 @@
+.form-wrap {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.form-wrap form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.title-input {
+  width: 600px;
+  height: 45px;
+  padding: 0 15px;
+  color: #888;
+  font-size: 16px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.category-select {
+  width: 350px;
+  border: 1px solid #e8e8e8;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0 15px;
+  color: #888;
+}
+
+.category-select:focus {
+  outline-offset: none;
+}
+
+.add-book-btn {
+  padding: 7px 45px;
+  background-color: #0290ff;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+}
+
+.add-book-btn:hover {
+  cursor: pointer;
+  background-color: #005697;
+}
+
+@media only screen and (max-width: 1200px) {
+  .form-wrap {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .form-wrap form {
+    flex-direction: column;
+  }
+
+  .title-input {
+    width: initial;
+  }
+
+  .category-select {
+    height: 45px;
+    width: initial;
+    margin: 15px 0;
+  }
+
+  .add-book-btn {
+    height: 45px;
+  }
+}

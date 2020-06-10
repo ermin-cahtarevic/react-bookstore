@@ -12,7 +12,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- ![screenshot]() -->
+![screenshot](./public/bookstore.png)
+
+<p align="center">
+  <img src="./public/bookstore-mobile.png">
+</p>
 
 In this project, I created a Bookstore App using React and Redux for a fictional company named "Magic-books Inc"
 

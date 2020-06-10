@@ -1,0 +1,69 @@
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 170px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding-left: 60px;
+}
+
+.book-category {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #121212;
+  opacity: 0.5;
+}
+
+.book-title {
+  font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author {
+  font-size: 13px;
+  font-weight: 300;
+  color: #4386bf;
+  margin: 5px 0 0;
+}
+
+.book-remove {
+  height: 70px;
+  border-left: 1px solid #e8e8e8;
+  width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-btn {
+  padding: 7px 22px;
+  background-color: #0290ff;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+}
+
+.remove-btn:hover {
+  cursor: pointer;
+  background-color: #005697;
+}
+
+@media only screen and (max-width: 768px) {
+  .book {
+    padding: 20px 0 0 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-remove {
+    border-left: none;
+  }
+}
