@@ -4,8 +4,9 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 const booksReducer = initialState => (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
+      const { id, title, category } = action.payload;
       return {
-        books: [...state.books, action.payload],
+        books: [...state.books, { id, title, category }],
       };
     case REMOVE_BOOK:
       return {
