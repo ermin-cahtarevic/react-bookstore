@@ -8,8 +8,7 @@ const createBook = (book) => {
       {
         title: book.title,
         category: book.category,
-      },
-      { withCredentials: true }
+      }
     ).then(response => {
       dispatch(CREATE_BOOK(response.data.data));
     }).catch(err => {
