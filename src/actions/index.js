@@ -18,4 +18,6 @@ const GET_BOOKS = books => ({
   payload: books,
 });
 
-export { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, GET_BOOKS };
+export {
+  CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, GET_BOOKS,
+};

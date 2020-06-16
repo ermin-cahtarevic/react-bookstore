@@ -13,9 +13,9 @@ const BooksList = ({
   filter,
   removeBook,
   changeFilter,
-  getBooks
+  getBooks,
 }) => {
-  useEffect(() => { getBooks() }, [getBooks]);
+  useEffect(() => { getBooks(); }, [getBooks]);
 
   const handleRemoveBook = book => removeBook(book.id);
 
@@ -63,6 +63,7 @@ BooksList.propTypes = {
   filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  getBooks: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
