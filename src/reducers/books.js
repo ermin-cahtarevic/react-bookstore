@@ -11,6 +11,10 @@ const booksReducer = initialState => (state = initialState, action) => {
       return {
         books: state.books.filter(book => book.id !== action.payload),
       };
+    case 'GET_BOOKS':
+      return {
+        books: [...action.payload],
+      }
     default: return state;
   }
 };

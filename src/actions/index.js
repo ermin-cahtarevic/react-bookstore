@@ -17,4 +17,9 @@ const changeFilter = filter => ({
   payload: filter,
 });
 
-export { createBook, removeBook, changeFilter };
+const GET_BOOKS = books => ({
+  type: 'GET_BOOKS',
+  payload: books,
+});
+
+export { createBook, removeBook, changeFilter, GET_BOOKS };

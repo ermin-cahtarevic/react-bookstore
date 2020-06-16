@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions/index';
+import getBooks from '../actions/getBooks';
 import CategoryFilter from '../components/CategoryFilter';
 import '../styles/book-list.css';
 
@@ -11,7 +12,10 @@ const BooksList = ({
   filter,
   removeBook,
   changeFilter,
+  getBooks
 }) => {
+  useEffect(() => { getBooks() }, [getBooks]);
+
   const handleRemoveBook = book => removeBook(book);
 
   const handleFilterChange = filter => changeFilter(filter);
@@ -26,7 +30,7 @@ const BooksList = ({
           filtered.map(book => (
             <Book
               book={book}
-              key={book.id}
+              key={book.id.toString()}
               removeBook={handleRemoveBook}
             />
           ))
@@ -44,6 +48,7 @@ const mapStateToProps = ({ books: { books }, filter }) => ({
 const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(removeBook(book)),
   changeFilter: filter => dispatch(changeFilter(filter)),
+  getBooks: () => dispatch(getBooks()),
 });
 
 BooksList.propTypes = {
@@ -51,7 +56,7 @@ BooksList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }),
   ).isRequired,
   filter: PropTypes.string.isRequired,
