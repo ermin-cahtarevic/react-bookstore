@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const getBooks = () => {
   return dispatch => {
-    axios.get('http://localhost:3001/api/v1/books').then(response => {
+    axios.get('https://bookstore-rails-api.herokuapp.com/api/v1/books').then(response => {
       dispatch(GET_BOOKS(response.data.data))
     })
   }
