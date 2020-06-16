@@ -3,9 +3,9 @@ const CREATE_BOOK = book => ({
   payload: book,
 });
 
-const REMOVE_BOOK = book => ({
+const REMOVE_BOOK = id => ({
   type: 'REMOVE_BOOK',
-  payload: book.id,
+  payload: id,
 });
 
 const CHANGE_FILTER = filter => ({

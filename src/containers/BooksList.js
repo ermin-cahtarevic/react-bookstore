@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
-import { REMOVE_BOOK, CHANGE_FILTER } from '../actions/index';
+import { CHANGE_FILTER } from '../actions/index';
 import getBooks from '../actions/getBooks';
+import removeBook from '../actions/removeBook';
 import CategoryFilter from '../components/CategoryFilter';
 import '../styles/book-list.css';
 
@@ -16,7 +17,7 @@ const BooksList = ({
 }) => {
   useEffect(() => { getBooks() }, [getBooks]);
 
-  const handleRemoveBook = book => removeBook(book);
+  const handleRemoveBook = book => removeBook(book.id);
 
   const handleFilterChange = filter => changeFilter(filter);
 
@@ -46,7 +47,7 @@ const mapStateToProps = ({ books: { books }, filter }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeBook: book => dispatch(REMOVE_BOOK(book)),
+  removeBook: book => dispatch(removeBook(book)),
   changeFilter: filter => dispatch(CHANGE_FILTER(filter)),
   getBooks: () => dispatch(getBooks()),
 });

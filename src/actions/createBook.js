@@ -11,10 +11,9 @@ const createBook = (book) => {
       },
       { withCredentials: true }
     ).then(response => {
-      console.log('registartion res', response);
       dispatch(CREATE_BOOK(response.data.data));
     }).catch(err => {
-      console.log('registartion err', err);
+      console.log('Book creation error', err);
     });
   }
 }
