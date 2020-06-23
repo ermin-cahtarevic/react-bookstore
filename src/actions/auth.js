@@ -1,30 +1,43 @@
 import axios from 'axios';
 
-const USER_LOADED = 'USER_LOADED';
-const USER_LOADING = 'USER_LOADING';
-const AUTH_ERROR = 'AUTH_ERROR';
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-const LOGIN_FAIL = 'LOGIN_FAIL';
-const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
-const REGISTER_FAIL = 'REGISTER_FAIL';
 
-const url = 'https://bookstore-rails-api.herokuapp.com/auth/login'
+const urlSignup = 'http://localhost:3001/signup';
+const urlLogin = 'http://localhost:3001/auth/login';
 
-export const loadUser = () => (dispatch, getState) => {
-  dispatch({ type: USER_LOADING });
+export const registerUser = user => dispatch => {
+  axios.post(
+    urlSignup,
+    {
+      name: user.name,
+      email: user.email,
+      password: user.password,
+      password_confirmation: user.password_confirmation,
+    },
+  ).then(res => {
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: {
+        token: res.data.auth_token,
+      },
+    });
+  });
+};
 
-  const token = getState().auth.token;
-
-  const config = {
-    headers: {
-      "Content-type": "application/json",
-    }
-  }
-
-  if (token) {
-    config.headers['Authorization'] = token;
-  }
-
-  axios.get(url, config)
-}
+export const loginUser = user => dispatch => {
+  axios.post(
+    urlLogin,
+    {
+      email: user.email,
+      password: user.password,
+    },
+  ).then(res => {
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: {
+        token: res.data.auth_token,
+      },
+    });
+  });
+};

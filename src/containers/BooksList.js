@@ -5,8 +5,8 @@ import Book from '../components/Book';
 import { CHANGE_FILTER } from '../actions/index';
 import getBooks from '../actions/getBooks';
 import removeBook from '../actions/removeBook';
-import CategoryFilter from '../components/CategoryFilter';
 import '../styles/book-list.css';
+import Navbar from '../components/Navbar';
 
 const BooksList = ({
   books,
@@ -14,6 +14,7 @@ const BooksList = ({
   removeBook,
   changeFilter,
   getBooks,
+  auth,
 }) => {
   useEffect(() => { getBooks(); }, [getBooks]);
 
@@ -25,25 +26,30 @@ const BooksList = ({
 
   return (
     <div>
-      <CategoryFilter changeFilter={handleFilterChange} />
+      <Navbar isAuth={auth.isAuthenticated} changeFilter={handleFilterChange} />
       <div className="book-list">
         {
-          filtered.map(book => (
-            <Book
-              book={book}
-              key={book.id.toString()}
-              removeBook={handleRemoveBook}
-            />
-          ))
+          filtered.length === 0 ? (
+            <div className="no-books">No books found. Please add one below.</div>
+          ) : (
+            filtered.map(book => (
+              <Book
+                book={book}
+                key={book.id.toString()}
+                removeBook={handleRemoveBook}
+              />
+            ))
+          )
         }
       </div>
     </div>
   );
 };
 
-const mapStateToProps = ({ books: { books }, filter }) => ({
+const mapStateToProps = ({ books: { books }, filter, auth }) => ({
   books,
   filter,
+  auth,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -64,6 +70,7 @@ BooksList.propTypes = {
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
   getBooks: PropTypes.func.isRequired,
+  auth: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

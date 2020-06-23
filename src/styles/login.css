@@ -1,0 +1,37 @@
+.login-wrap form input {
+  padding: 5px 7px;
+  margin: 0 5px;
+  height: 34px;
+}
+
+form input.login-btn {
+  background-color: #0290ff;
+  color: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+form input.login-btn:hover {
+  cursor: pointer;
+  background-color: #00599e;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-wrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .login-wrap form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .login-wrap form input {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
