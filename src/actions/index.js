@@ -1,20 +1,23 @@
-const CREATE_BOOK = 'CREATE_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
-const CHANGE_FILTER = 'CHANGE_FILTER';
-
-const createBook = book => ({
-  type: CREATE_BOOK,
+const CREATE_BOOK = book => ({
+  type: 'CREATE_BOOK',
   payload: book,
 });
 
-const removeBook = book => ({
-  type: REMOVE_BOOK,
-  payload: book.id,
+const REMOVE_BOOK = id => ({
+  type: 'REMOVE_BOOK',
+  payload: id,
 });
 
-const changeFilter = filter => ({
-  type: CHANGE_FILTER,
+const CHANGE_FILTER = filter => ({
+  type: 'CHANGE_FILTER',
   payload: filter,
 });
 
-export { createBook, removeBook, changeFilter };
+const GET_BOOKS = books => ({
+  type: 'GET_BOOKS',
+  payload: books,
+});
+
+export {
+  CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, GET_BOOKS,
+};

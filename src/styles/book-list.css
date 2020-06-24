@@ -5,6 +5,12 @@
   border-bottom: 1px solid #e8e8e8;
 }
 
+.no-books {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 15px 0;
+}
+
 @media only screen and (max-width: 768px) {
   .book-list {
     margin: 20px 10px;
