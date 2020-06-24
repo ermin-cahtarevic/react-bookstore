@@ -3,8 +3,8 @@ import axios from 'axios';
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 
-const urlSignup = 'http://localhost:3001/signup';
-const urlLogin = 'http://localhost:3001/auth/login';
+const urlSignup = 'https://bookstore-rails-api.herokuapp.com/signup';
+const urlLogin = 'https://bookstore-rails-api.herokuapp.com/auth/login';
 
 export const registerUser = user => dispatch => {
   axios.post(

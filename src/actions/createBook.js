@@ -6,7 +6,7 @@ const token = localStorage.getItem('token');
 
 const createBook = book => dispatch => {
   axios.post(
-    'http://localhost:3001/api/v1/books',
+    'https://bookstore-rails-api.herokuapp.com/api/v1/books',
     {
       title: book.title,
       category: book.category,

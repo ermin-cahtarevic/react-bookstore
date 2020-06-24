@@ -4,7 +4,7 @@ import { GET_BOOKS } from './index';
 const token = localStorage.getItem('token');
 
 const getBooks = () => dispatch => {
-  axios.get('http://localhost:3001/api/v1/books',
+  axios.get('https://bookstore-rails-api.herokuapp.com/api/v1/books',
     {
       headers: {
         Authorization: `Bearer ${token}`,
