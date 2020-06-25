@@ -12,15 +12,32 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![screenshot](./public/bookstore.png)
+### Home
+
+<p align="center">
+  <img src="./public/bookstore-home.png">
+</p>
+
+### Dashboard
+
+<p align="center">
+  <img src="./public/bookstore.png">
+</p>
+
+### Mobile
 
 <p align="center">
   <img src="./public/bookstore-mobile.png">
 </p>
 
-In this project, I created a Bookstore App using React and Redux for a fictional company named "Magic-books Inc"
+In this project, I created a Bookstore App using React and Redux for a fictional company named "Magic-books Inc".
+And I connected it to a Rails API, from which the users and books are served from.
 
-Live version of the project: [Live version](https://react-bookstore-ermin.herokuapp.com/)
+Live version of the project: [Live version](https://bookstore-cms-ermin.netlify.app/)
+
+Rails API: 
+  - [Live URL](https://bookstore-rails-api.herokuapp.com/)
+  - [GitHub Repository](https://github.com/ermin-cahtarevic/bookstore-cms-api)
 
 Project Link: [React-Bookstore](https://github.com/ermin-cahtarevic/react-bookstore)
 
