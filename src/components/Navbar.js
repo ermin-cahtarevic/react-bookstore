@@ -75,6 +75,8 @@ const Navbar = ({ isAuth, changeFilter, history }) => {
   );
 };
 
+/* eslint-disable react/forbid-prop-types */
+
 Navbar.propTypes = {
   isAuth: PropTypes.bool.isRequired,
   changeFilter: PropTypes.func.isRequired,
