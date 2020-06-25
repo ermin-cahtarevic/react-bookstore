@@ -78,7 +78,7 @@ const Navbar = ({ isAuth, changeFilter, history }) => {
 Navbar.propTypes = {
   isAuth: PropTypes.bool.isRequired,
   changeFilter: PropTypes.func.isRequired,
-  history: PropTypes.objectOf(PropTypes.object()).isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 export default withRouter(Navbar);
